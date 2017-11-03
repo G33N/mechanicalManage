@@ -5,7 +5,8 @@ Manage your workshop with style!
 
 ## Firebase schema
 
-```  -|users
+```  
+  -|users
       name: string
       address: string
       district: string
@@ -65,7 +66,8 @@ Manage your workshop with style!
                   description: string
                   materials: string[]
                   state: boolean
-              state: state.$key // Refered to states node.```
+              state: state.$key // Refered to states node.
+```
 
 ## How install
 This APP required someone dependencies they are:
