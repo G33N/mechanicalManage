@@ -1,5 +1,5 @@
 # Mechanical Manage
-![logo nut](https://firebasestorage.googleapis.com/v0/b/mechanicalmanage.appspot.com/o/git%2Fnut-01.png?alt=media&token=214c1c9d-2c45-4448-8637-9cc8288415db)
+![logo nut](https://firebasestorage.googleapis.com/v0/b/mechanicalmanage.appspot.com/o/git%2FbannerMechanicalManage-01.png?alt=media&token=2b8c46f2-eb7f-4d29-ac50-44bf388dea75)
 
 Manage your workshop with style!
 
