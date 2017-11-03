@@ -1,0 +1,35 @@
+<div class="fluid-container">
+  <div class="row backgroud-dark">
+    <div class="banner"></div>
+    <div class="col-md-12 header">
+      <h1 id="logo">{{name.first}}<span>{{name.second}}</span></h1>
+    </div>
+    <div class="col-md-8 mx-auto">
+      <div class="content">
+        <p class="comingsoon">Gestiona tu taller con facilidad!</p>
+        <p class="main-content">Si estas interesado en nuestro sistema registrate!</p>
+        <div class="col-md-8 mx-auto">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="field">
+              <input type="text" placeholder="Email" formControlName="email">
+            </div>
+            <div class="submit">
+              <button type="submit" [disabled]="form.invalid">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="social">
+          <a href="#" class="facebook">facebook <i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#" class="twitter">twitter <i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-copyright">
+    <div class="container-fluid">
+      © 2017 Copyright: <a href="http://www.enlaceit.com.ar"> Enlace IT </a>
+    </div>
+  </div>
+</footer>
