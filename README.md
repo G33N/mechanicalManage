@@ -1,7 +1,7 @@
 # Mechanical Manage
-![logo nut](gs://mechanicalmanage.appspot.com/git/nut-01.png)
+![logo nut](https://firebasestorage.googleapis.com/v0/b/mechanicalmanage.appspot.com/o/git%2Fnut-01.png?alt=media&token=214c1c9d-2c45-4448-8637-9cc8288415db)
 
-Manage your workshop with style! 
+Manage your workshop with style!
 
 ## How install
 This APP required someone dependencies they are:
