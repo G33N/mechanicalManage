@@ -1,0 +1,14 @@
+<p class="h5 text-center mb-4">Registrar Categorias</p>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-user prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="category.description" required mdbActive>
+      <label>Descripcion</label>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+    <span class="badge badge-{{notification.type}}" *ngIf="notification">{{ notification.message }}</span>
+  <button (click)="create(category)" class="btn btn-unique waves-light btn-block" mdbRippleRadius>Guardar <i class="fa fa-floppy-o ml-1"></i></button>
+</div>

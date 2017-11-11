@@ -1,0 +1,18 @@
+<h1>Categorias </h1>
+<table class="table">
+  <thead class="mdb-color darken-3">
+    <tr class="text-white">
+      <th>Descripcion</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories | async">
+      <td>{{ category.description }}</td>
+      <td><button class="btn btn-sm btn-success" (click)="update(category)">Modificar <i class="fa fa-pencil ml-1"></i></button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="delete(category)">Borrar <i class="fa fa-trash ml-1"></i></button>
+</td>
+    </tr>
+  </tbody>
+</table>
