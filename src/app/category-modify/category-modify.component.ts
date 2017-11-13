@@ -17,7 +17,12 @@ import { CategoryService } from '../services/category.service';
 export class CategoryModifyComponent implements OnInit {
   category = {} as Category;
   categoryUpdate= {} as Category;
-  constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private catService: CategoryService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private db: AngularFireDatabase,
+    private catService: CategoryService
+  ) {
     // READ ROUTE PARAMS
     this.route.params.subscribe((params: Category) => this.category = params);
   }
@@ -26,5 +31,6 @@ export class CategoryModifyComponent implements OnInit {
 
   update(category) {
     this.catService.update(category, this.categoryUpdate);
+    this.router.navigate([`/content/category/read`]);
   }
 }

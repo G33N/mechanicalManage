@@ -1,0 +1,55 @@
+
+<p class="h5 text-center mb-4">Registrar Producto</p>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-barcode prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="stock.code" disabled mdbActive>
+      <label>Codigo</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-list prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="stock.name" mdbActive>
+      <label>Descripcion</label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-th prefix grey-text"></i>
+      <input type="number" class="form-control" [(ngModel)]="stock.stock" mdbActive>
+      <label>Stock</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-usd prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="stock.price" mdbActive>
+      <label>Precio</label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-calendar prefix grey-text"></i>
+      <input type="date" class="form-control" [(ngModel)]="stock.date" mdbActive>
+      <label>Fecha Vencimiento</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class=" md-form">
+      <select class="form-control" [(ngModel)]="stock.category">
+        <option *ngFor="let category of category$ | async">{{ category.description }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <button class="btn btn-unique waves-light btn-block" (click)="create(stock)" mdbRippleRadius>Guardar
+    <i class="fa fa-floppy-o ml-1"></i>
+  </button>
+</div>

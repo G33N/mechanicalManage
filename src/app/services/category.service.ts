@@ -9,20 +9,20 @@ import { Category } from '../models/category';
 @Injectable()
 export class CategoryService {
   category = {} as Category;
-  categories: FirebaseListObservable<any[]>;
+  category$: FirebaseListObservable<any[]>;
   constructor(private db: AngularFireDatabase, private router: Router) { }
 
   create(category: Category) {
     // read item list
     this.read();
     // push new item
-    this.categories.push(category);
+    this.category$.push(category);
   }
 
   read() {
-    // this.categories = this.db.list(`categories/${this.currentAuth.uid}`); // when I update the login use this line
-    this.categories = this.db.list(`categories`);
-    return this.categories;
+    // this.category$ = this.db.list(`category$/${this.currentAuth.uid}`); // when I update the login use this line
+    this.category$ = this.db.list(`categories`);
+    return this.category$;
   }
 
   update(category, data) {
@@ -31,7 +31,7 @@ export class CategoryService {
 
   delete(category) {
     // delete item
-    this.categories.remove(category.$key);
+    this.category$.remove(category.$key);
   }
 
 }

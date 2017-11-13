@@ -20,6 +20,16 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryModifyComponent } from './category-modify/category-modify.component';
 import { CategoryCreateComponent } from './category-create/category-create.component';
+import { StockCreateComponent } from './stock-create/stock-create.component';
+import { StockListComponent } from './stock-list/stock-list.component';
+import { StockModifyComponent } from './stock-modify/stock-modify.component';
+import { ClientCreateComponent } from './client-create/client-create.component';
+import { ClientListComponent } from './client-list/client-list.component';
+import { ClientModifyComponent } from './client-modify/client-modify.component';
+import { WorkOrderCreateComponent } from './work-order-create/work-order-create.component';
+import { WorkOrderListComponent } from './work-order-list/work-order-list.component';
+import { WorkOrderModifyComponent } from './work-order-modify/work-order-modify.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 // Must export the config
 export const firebaseConfig = {
   apiKey: 'AIzaSyDpvTQlzA5G5zhXjFuZvh2JsvMLbDwIWQM',
@@ -42,6 +52,16 @@ export const firebaseConfig = {
     CategoryListComponent,
     CategoryModifyComponent,
     CategoryCreateComponent,
+    StockCreateComponent,
+    StockListComponent,
+    StockModifyComponent,
+    ClientCreateComponent,
+    ClientListComponent,
+    ClientModifyComponent,
+    WorkOrderCreateComponent,
+    WorkOrderListComponent,
+    WorkOrderModifyComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

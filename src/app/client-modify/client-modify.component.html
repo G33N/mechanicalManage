@@ -1,0 +1,52 @@
+<p class="h5 text-center mb-4">Registrar Cliente</p>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-user prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="client.name" mdbActive>
+      <label>Nombre</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-id-card-o prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="client.id" mdbActive>
+      <label>DNI</label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-map-marker prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="client.address" mdbActive>
+      <label>Direccion</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-map-marker prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="client.town" mdbActive>
+      <label>Localidad</label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-phone prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="client.telephone" mdbActive>
+      <label>Telefono</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="md-form">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="client.email" mdbActive>
+      <label>Email</label>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <button class="btn btn-unique waves-light btn-block" (click)="update(client)" mdbRippleRadius>Guardar <i class="fa fa-floppy-o ml-1"></i></button>
+</div>  

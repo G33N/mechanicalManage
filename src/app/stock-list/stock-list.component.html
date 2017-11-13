@@ -1,0 +1,25 @@
+<h1>Productos </h1>
+<table class="table">
+  <thead class="mdb-color darken-3">
+    <tr class="text-white">
+      <th><i class="fa fa-barcode prefix grey-text"></i></th>
+      <th>Descripcion</th>
+      <th>Stock</th>
+      <th>Fecha</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stock of stock$ | async">
+      <!-- <td>{{ stock.$key }}</td> -->
+      <td></td>
+      <td>{{ stock.name }}</td>
+      <td>{{ stock.stock }}</td>
+      <td>{{ stock.date }}</td>
+      <td><button class="btn btn-sm btn-success" (click)="update(stock)"><i class="fa fa-pencil ml-1"></i></button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="delete(stock)"><i class="fa fa-trash ml-1"></i></button>
+</td>
+    </tr>
+  </tbody>
+</table>

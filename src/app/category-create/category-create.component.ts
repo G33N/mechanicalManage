@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// ROUTER
+import { Router } from '@angular/router';
 // FIREBASE
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 // MODELS
@@ -16,7 +18,11 @@ export class CategoryCreateComponent implements OnInit {
   category = {} as Category;
   categories: FirebaseListObservable<any[]>;
   notification: { message: string, type: string };
-  constructor(private db: AngularFireDatabase, private catService: CategoryService) {
+  constructor(
+    private router: Router,
+    private db: AngularFireDatabase,
+    private catService: CategoryService
+  ) {
     this.read();
   }
   ngOnInit() {
@@ -39,6 +45,7 @@ export class CategoryCreateComponent implements OnInit {
         type: 'danger'
       };
     }
+    this.router.navigate([`/content/category/read`]);
   }
 
 }

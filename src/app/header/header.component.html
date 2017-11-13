@@ -11,31 +11,31 @@
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-effect waves-light" mdbRippleRadius>MANTENIMIENTO<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/client">CLIENTE</a>
-          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/work-order">ORDENES DE SERVICIO</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/client/create">CLIENTE</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/work-order/create">ORDENES DE SERVICIO</a>
           <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock">STOCK</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock/create">STOCK</a>
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/category/create">CATEGORIAS</a>
           <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employees">EMPLEADOS</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employees/create">EMPLEADOS</a>
         </div>
       </li>
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>CONSULTAS<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-unique" role="menu">
-          <a class="dropdown-item waves-light" mdbRippleRadius >STOCK</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock/read">STOCK</a>
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/category/read">CATEGORIAS</a>
           <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbRippleRadius href="#">CLIENTES</a>
-          <a class="dropdown-item waves-light" mdbRippleRadius href="#">ORDENES DE SERVICIO</a>
-          <a class="dropdown-item waves-light" mdbRippleRadius href="#">EMPLEADOS</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/client/read">CLIENTES</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/work-order/read">ORDENES DE SERVICIO</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employee/read">EMPLEADOS</a>
         </div>
       </li>
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>REPORTES<span class="caret"></span></a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-unique" role="menu">
-          <a class="dropdown-item waves-light" mdbRippleRadius >PRODUCTOS</a>
-          <a class="dropdown-item waves-light" mdbRippleRadius href="#">EMPLEADOS</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock/read">PRODUCTOS</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employee/read">EMPLEADOS</a>
         </div>
       </li>
     </ul>
