@@ -6,7 +6,11 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class AuthGuard {
 
-  constructor( private auth: AuthService, private router: Router ) {
+  constructor(
+    private router: Router,
+    private auth: AuthService
+  ) {
+    console.log(this.auth.currentUserId);
   }
 
   canActivate(

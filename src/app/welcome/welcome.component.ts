@@ -16,9 +16,9 @@ export class WelcomeComponent implements OnInit {
   password: string;
   authState: any;
   constructor(
+    private router: Router,
     private afAuth: AngularFireAuth,
     private auth: AuthService,
-    private router: Router
   ) {
     // This should be repleace the this.authenticated, this don't works
     this.authState = afAuth.authState;

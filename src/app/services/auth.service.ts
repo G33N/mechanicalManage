@@ -10,9 +10,11 @@ export class AuthService {
 
   authState: any = null;
 
-  constructor(private afAuth: AngularFireAuth,
+  constructor(
+    private router: Router,
     private db: AngularFireDatabase,
-    private router: Router) {
+    private afAuth: AngularFireAuth
+  ) {
 
     this.afAuth.authState.subscribe((auth) => {
       this.authState = auth;
@@ -20,6 +22,7 @@ export class AuthService {
     if (this.authenticated) {
       this.router.navigate(['/content']);
     }
+    console.log(this.authState);
   }
 
   // Returns true if user is logged in
@@ -125,7 +128,6 @@ export class AuthService {
     return auth.sendPasswordResetEmail(email)
       .then(() => console.log('email sent')).catch((error) => console.log(error));
   }
-
 
   //// Sign Out ////
   signOut(): void {

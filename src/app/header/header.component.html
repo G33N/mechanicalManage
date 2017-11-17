@@ -50,7 +50,7 @@
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius><i class="fa fa-user"></i> Perfil
+        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius><i class="fa fa-user"></i> {{ authState.email }}
         </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-unique" role="menu">
           <a class="dropdown-item waves-light" mdbRippleRadius (click)="showUser()" >Perfil</a>

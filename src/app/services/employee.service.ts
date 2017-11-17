@@ -6,12 +6,21 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 // MODELS
 import { Employee } from '../models/employee';
 import { log } from 'util';
+// SERVICES
+import { AuthService } from './auth.service';
+
 
 @Injectable()
 export class EmployeeService {
   employee = {} as Employee;
   employee$: FirebaseListObservable<any[]>;
-  constructor(private db: AngularFireDatabase) { }
+  currentUser: any;
+  constructor(
+    private db: AngularFireDatabase,
+    private auth: AuthService
+  ) {
+    this.currentUser = this.auth.currentUserId;
+  }
 
   create(employee: Employee) {
     // read item list
@@ -22,19 +31,19 @@ export class EmployeeService {
 
   read() {
     // read all collections in node employee
-    this.employee$ = this.db.list(`employees`);
+    this.employee$ = this.db.list(`employees/${this.currentUser}`);
     return this.employee$;
   }
 
   readByKey(key) {
     // read by key in node employee
     let exit: any;
-    exit = this.db.object(`employees/${key}`);
+    exit = this.db.object(`employees/${this.currentUser}/${key}`);
     return exit;
   }
 
   update(employee) {
-    this.db.object(`employees/${employee.$key}`).set(employee);
+    this.db.object(`employees/${this.currentUser}/${employee.$key}`).set(employee);
   }
 
   delete(employee) {

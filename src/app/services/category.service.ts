@@ -5,12 +5,21 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 // MODELS
 import { Category } from '../models/category';
+import { AuthService } from './../services/auth.service';
+
 
 @Injectable()
 export class CategoryService {
   category = {} as Category;
   category$: FirebaseListObservable<any[]>;
-  constructor(private db: AngularFireDatabase, private router: Router) { }
+  currentUser: any;
+  constructor(
+    private db: AngularFireDatabase,
+    private router: Router,
+    private auth: AuthService
+  ) {
+    this.currentUser = this.auth.currentUserId;
+  }
 
   create(category: Category) {
     // read item list
@@ -20,13 +29,12 @@ export class CategoryService {
   }
 
   read() {
-    // this.category$ = this.db.list(`category$/${this.currentAuth.uid}`); // when I update the login use this line
-    this.category$ = this.db.list(`categories`);
+    this.category$ = this.db.list(`categories/${this.currentUser}`);
     return this.category$;
   }
 
   update(category, data) {
-    this.db.object(`categories/${category.key}`).set(data);
+    this.db.object(`categories/${this.currentUser}/${category.key}`).set(data);
   }
 
   delete(category) {

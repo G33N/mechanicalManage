@@ -20,8 +20,7 @@ export class CategoryCreateComponent implements OnInit {
   notification: { message: string, type: string };
   constructor(
     private router: Router,
-    private db: AngularFireDatabase,
-    private catService: CategoryService
+    private catService: CategoryService,
   ) {
     this.read();
   }
