@@ -10,8 +10,7 @@ import { StockService } from './../services/stock.service';
 @Component({
   selector: 'app-stock-list',
   templateUrl: './stock-list.component.html',
-  styleUrls: ['./stock-list.component.scss'],
-  providers: [ StockService ]
+  styleUrls: ['./stock-list.component.scss']
 })
 export class StockListComponent implements OnInit {
   stock = {} as Stock;

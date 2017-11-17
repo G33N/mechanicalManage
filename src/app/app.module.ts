@@ -5,6 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // ROUTER
 import { routes } from './app.routing';
+// SERVICES
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { StockService } from './services/stock.service';
+import { CategoryService } from './services/category.service';
+import { EmployeeService } from './services/employee.service';
+import { ClientService } from './services/client.service';
+// FIREBASE
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,11 +24,6 @@ import { ClientComponent } from './client/client.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { StockComponent } from './stock/stock.component';
 import { CategoryComponent } from './category/category.component';
-import { EmployeesComponent } from './employees/employees.component';
-// FIREBASE
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryModifyComponent } from './category-modify/category-modify.component';
 import { CategoryCreateComponent } from './category-create/category-create.component';
@@ -30,6 +37,10 @@ import { WorkOrderCreateComponent } from './work-order-create/work-order-create.
 import { WorkOrderListComponent } from './work-order-list/work-order-list.component';
 import { WorkOrderModifyComponent } from './work-order-modify/work-order-modify.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeCreateComponent } from './employee-create/employee-create.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeModifyComponent } from './employee-modify/employee-modify.component';
 // Must export the config
 export const firebaseConfig = {
   apiKey: 'AIzaSyDpvTQlzA5G5zhXjFuZvh2JsvMLbDwIWQM',
@@ -48,7 +59,6 @@ export const firebaseConfig = {
     WorkOrderComponent,
     StockComponent,
     CategoryComponent,
-    EmployeesComponent,
     CategoryListComponent,
     CategoryModifyComponent,
     CategoryCreateComponent,
@@ -62,6 +72,10 @@ export const firebaseConfig = {
     WorkOrderListComponent,
     WorkOrderModifyComponent,
     WelcomeComponent,
+    EmployeeComponent,
+    EmployeeCreateComponent,
+    EmployeeListComponent,
+    EmployeeModifyComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +89,14 @@ export const firebaseConfig = {
     AngularFireAuthModule
   ],
     schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthService,
+    StockService,
+    CategoryService,
+    EmployeeService,
+    ClientService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

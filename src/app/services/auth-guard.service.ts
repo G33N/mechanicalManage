@@ -1,8 +1,23 @@
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Injectable()
-export class AuthGuardService {
+export class AuthGuard {
 
-  constructor() { }
+  constructor( private auth: AuthService, private router: Router ) {
+  }
 
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean> | boolean {
+      if (this.auth.authenticated) {
+        return true;
+      }
+
+      console.log('Access Denied!');
+      this.router.navigate(['/welcome']);
+      return false;
+    }
 }

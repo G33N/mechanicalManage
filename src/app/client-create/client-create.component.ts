@@ -8,13 +8,12 @@ import { Client } from '../models/client';
 // SERVICES
 import { ClientService } from './../services/client.service';
 
-
 @Component({
   selector: 'app-client-create',
   templateUrl: './client-create.component.html',
-  styleUrls: ['./client-create.component.scss'],
-  providers: [ ClientService ]
+  styleUrls: ['./client-create.component.scss']
 })
+
 export class ClientCreateComponent implements OnInit {
   client = {} as Client;
   client$: FirebaseListObservable<Client[]>;

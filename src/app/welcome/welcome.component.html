@@ -1,122 +1,78 @@
-<div class="card-body">
+<section class="container-fluid background">
+  <div class="card-body">
 
-  <h2 class="feature-title text-center mb-5 mt-4 font-bold">
-    <strong>REGISTER</strong>
-  </h2>
-  <hr>
+    <h2 class="feature-title text-center mb-5 mt-4 font-bold">
+      <strong>Bienvenido </strong>
+    </h2>
+    <hr>
 
-
-  <div class="row mt-5">
-
-
-    <div class="col-md-6 ml-lg-5 ml-md-3 features-small">
-
-
-      <div class="row pb-3">
-        <div class="col-2 col-lg-1">
-          <i class="fa fa-bank indigo-text fa-lg"></i>
+    <div class="row mt-5">
+      <div class="col-md-6 ml-lg-5 ml-md-3 features-small">
+        <div class="row pb-3">
+          <div class="col-2 col-lg-1">
+            <i class="fa fa-bank indigo-text fa-lg"></i>
+          </div>
+          <div class="col-10">
+            <h4 class="feature-title">
+              <strong>Seguridad </strong>
+            </h4>
+            <p class="dark-grey-text"> Mantenga sus datos todo el tiempo online y con toda la seguridad de la empresa mas grande en el area tecnologia.
+            </p>
+          </div>
         </div>
-        <div class="col-10">
-          <h4 class="feature-title">
-            <strong>Safety</strong>
-          </h4>
-          <p class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti
-            hic.
-          </p>
+
+        <div class="row pb-3">
+          <div class="col-2 col-lg-1">
+            <i class="fa fa-desktop deep-purple-text fa-lg"></i>
+          </div>
+          <div class="col-10">
+            <h4 class="feature-title">
+              <strong>Tecnologia </strong>
+            </h4>
+            <p class="dark-grey-text"> Enlace IT sigue los estandares  y desarrolla sus aplicaciones bajo tecnologia con soporte de Google.
+            </p>
+          </div>
         </div>
-      </div>
 
-
-
-      <div class="row pb-3">
-        <div class="col-2 col-lg-1">
-          <i class="fa fa-desktop deep-purple-text fa-lg"></i>
-        </div>
-        <div class="col-10">
-          <h4 class="feature-title">
-            <strong>Technology</strong>
-          </h4>
-          <p class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti
-            hic.
-          </p>
-        </div>
-      </div>
-
-
-
-      <div class="row pb-4">
-        <div class="col-2 col-lg-1">
-          <i class="fa fa-money purple-text fa-lg"></i>
-        </div>
-        <div class="col-10">
-          <h4 class="feature-title">
-            <strong>Finance</strong>
-          </h4>
-          <p class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti
-            hic.
-          </p>
+        <div class="row pb-4">
+          <div class="col-2 col-lg-1">
+            <i class="fa fa-money purple-text fa-lg"></i>
+          </div>
+          <div class="col-10">
+            <h4 class="feature-title">
+              <strong>Finanzas </strong>
+            </h4>
+            <p class="dark-grey-text"> Perder el miedo a implementar nuevas tecnologias ayudaria a tu emprendimiento a ganar mas dinero automatizando
+              y controlando su negocio de manera mas efectiva y desde cualquier punto del mundo.
+            </p>
+          </div>
         </div>
       </div>
 
+      <div class="col-md-5">
+        <div class="row pb-4 d-flex justify-content-center mb-4">
+          <h4 class="mt-3 mr-4">
+            <strong>Ingresar </strong>
+          </h4>
 
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-user prefix grey-text"></i>
+          <input type="text" class="form-control" [(ngModel)]="email" mdbActive>
+          <label>Email</label>
+        </div>
+
+        <div class="md-form">
+            <i class="fa fa-lock prefix grey-text"></i>
+            <input type="password" class="form-control" [(ngModel)]="password" mdbActive>
+            <label>Contraseña</label>
+          </div>
+
+        <div class="text-center">
+          <button class="btn btn-indigo btn-rounded mt-3 waves-effect waves-light" mdbrippleradius="" (click)="login()">Ingresar </button>
+        </div>
+      </div>
     </div>
-
-
-
-    <div class="col-md-5">
-
-
-      <div class="row pb-4 d-flex justify-content-center mb-4">
-
-        <h4 class="mt-3 mr-4">
-          <strong>Login with</strong>
-        </h4>
-
-        <div class="inline-ul text-center d-flex justify-content-center">
-          <a class="icons-sm tw-ic">
-            <i class="fa fa-twitter fa-lg indigo-text"></i>
-          </a>
-          <a class="icons-sm li-ic">
-            <i class="fa fa-linkedin fa-lg indigo-text"> </i>
-          </a>
-          <a class="icons-sm ins-ic">
-            <i class="fa fa-instagram fa-lg indigo-text"> </i>
-          </a>
-        </div>
-
-        <h4 class="mt-3 ml-4">
-          <strong>or:</strong>
-        </h4>
-
-      </div>
-
-
-
-      <div class="md-form">
-        <i class="fa fa-user prefix dark-grey-text"></i>
-        <input class="form-control" id="orangeForm-name" mdbactive="" type="text">
-        <label for="orangeForm-name" class="">Your name</label>
-      </div>
-      <div class="md-form">
-        <i class="fa fa-envelope prefix dark-grey-text"></i>
-        <input class="form-control" id="orangeForm-email" mdbactive="" type="text">
-        <label for="orangeForm-email" class="">Your email</label>
-      </div>
-
-      <div class="md-form">
-        <i class="fa fa-lock prefix dark-grey-text"></i>
-        <input class="form-control" id="orangeForm-pass" mdbactive="" type="password">
-        <label for="orangeForm-pass" class="">Your password</label>
-      </div>
-
-      <div class="text-center">
-        <button class="btn btn-indigo btn-rounded mt-3 waves-effect waves-light" mdbrippleradius="">Sign up</button>
-      </div>
-
-    </div>
-
-
   </div>
-
-
-</div>
+</section>

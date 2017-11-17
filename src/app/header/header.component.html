@@ -1,15 +1,20 @@
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-unique">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-unique" *ngIf="authState">
   <a class="navbar-brand" href="#">GTM</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-effect waves-light" routerLink="/content/dashboard">INICIO <span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-effect waves-light" routerLink="/content/dashboard">INICIO
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-effect waves-light" mdbRippleRadius>MANTENIMIENTO<span class="caret"></span></a>
+        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-effect waves-light" mdbRippleRadius>MANTENIMIENTO
+          <span class="caret"></span>
+        </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/client/create">CLIENTE</a>
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/work-order/create">ORDENES DE SERVICIO</a>
@@ -17,11 +22,13 @@
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock/create">STOCK</a>
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/category/create">CATEGORIAS</a>
           <div class="divider dropdown-divider"></div>
-          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employees/create">EMPLEADOS</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employee/create">EMPLEADOS</a>
         </div>
       </li>
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>CONSULTAS<span class="caret"></span></a>
+        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>CONSULTAS
+          <span class="caret"></span>
+        </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-unique" role="menu">
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock/read">STOCK</a>
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/category/read">CATEGORIAS</a>
@@ -32,7 +39,9 @@
         </div>
       </li>
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>REPORTES<span class="caret"></span></a>
+        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>REPORTES
+          <span class="caret"></span>
+        </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-unique" role="menu">
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/stock/read">PRODUCTOS</a>
           <a class="dropdown-item waves-light" mdbRippleRadius routerLink="/content/employee/read">EMPLEADOS</a>
@@ -40,12 +49,12 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
-          <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
-          <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius><i class="fa fa-user"></i> Perfil
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-unique" role="menu">
+          <a class="dropdown-item waves-light" mdbRippleRadius (click)="showUser()" >Perfil</a>
+          <a class="dropdown-item waves-light" mdbRippleRadius (click)="signOut()" >logOut</a>
         </div>
       </li>
     </ul>

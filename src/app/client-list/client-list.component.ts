@@ -11,8 +11,7 @@ import { ClientService } from '../services/client.service';
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.component.html',
-  styleUrls: ['./client-list.component.scss'],
-  providers: [ ClientService ]
+  styleUrls: ['./client-list.component.scss']
 })
 export class ClientListComponent implements OnInit {
   client = {} as Client;

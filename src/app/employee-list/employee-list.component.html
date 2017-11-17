@@ -1,0 +1,28 @@
+<h1>Clientes </h1>
+<table class="table">
+  <thead class="mdb-color darken-3">
+    <tr class="text-white">
+      <th>DNI</th>
+      <th>Nombre</th>
+      <th>Localidad</th>
+      <th>Telefono</th>
+      <th>Email</th>
+      <th>Localidad</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employee$ | async">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.town }}</td>
+      <td>{{ employee.telephone }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.town }}</td>
+      <td><button class="btn btn-sm btn-success" (click)="update(employee)"><i class="fa fa-pencil ml-1"></i></button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="delete(employee)"><i class="fa fa-trash ml-1"></i></button>
+</td>
+    </tr>
+  </tbody>
+</table>

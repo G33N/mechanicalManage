@@ -11,9 +11,9 @@ import { CategoryService } from '../services/category.service';
 @Component({
   selector: 'app-category-modify',
   templateUrl: './category-modify.component.html',
-  styleUrls: ['./category-modify.component.scss'],
-  providers: [ CategoryService ]
+  styleUrls: ['./category-modify.component.scss']
 })
+
 export class CategoryModifyComponent implements OnInit {
   category = {} as Category;
   categoryUpdate= {} as Category;

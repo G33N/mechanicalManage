@@ -13,8 +13,7 @@ import { StockService } from './../services/stock.service';
 @Component({
   selector: 'app-stock-create',
   templateUrl: './stock-create.component.html',
-  styleUrls: ['./stock-create.component.scss'],
-  providers: [ CategoryService, StockService ]
+  styleUrls: ['./stock-create.component.scss']
 })
 export class StockCreateComponent implements OnInit {
   category = {} as Category;

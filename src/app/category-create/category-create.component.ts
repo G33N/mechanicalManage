@@ -11,9 +11,9 @@ import { CategoryService } from '../services/category.service';
 @Component({
   selector: 'app-category-create',
   templateUrl: './category-create.component.html',
-  styleUrls: ['./category-create.component.scss'],
-  providers: [ CategoryService ]
+  styleUrls: ['./category-create.component.scss']
 })
+
 export class CategoryCreateComponent implements OnInit {
   category = {} as Category;
   categories: FirebaseListObservable<any[]>;

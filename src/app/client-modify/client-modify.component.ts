@@ -11,9 +11,9 @@ import { ClientService } from '../services/client.service';
 @Component({
   selector: 'app-client-modify',
   templateUrl: './client-modify.component.html',
-  styleUrls: ['./client-modify.component.scss'],
-  providers: [ ClientService ]
+  styleUrls: ['./client-modify.component.scss']
 })
+
 export class ClientModifyComponent implements OnInit {
   client = {} as Client;
   client$: FirebaseObjectObservable<Client>;

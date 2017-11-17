@@ -13,8 +13,7 @@ import { CategoryService } from './../services/category.service';
 @Component({
   selector: 'app-stock-modify',
   templateUrl: './stock-modify.component.html',
-  styleUrls: ['./stock-modify.component.scss'],
-  providers: [ StockService, CategoryService ]
+  styleUrls: ['./stock-modify.component.scss']
 })
 export class StockModifyComponent implements OnInit {
   stock = {} as Stock;
