@@ -1,4 +1,4 @@
-export interface Category {
+export interface Order {
     model: string;
     plate: string;
     fuel?: string;

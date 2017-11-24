@@ -24,6 +24,7 @@ import { WorkOrderComponent } from './work-order/work-order.component';
 import { WorkOrderCreateComponent } from './work-order-create/work-order-create.component';
 import { WorkOrderListComponent } from './work-order-list/work-order-list.component';
 import { WorkOrderModifyComponent } from './work-order-modify/work-order-modify.component';
+import { WorkOrderPrintComponent } from './work-order-print/work-order-print.component';
 
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
@@ -63,6 +64,10 @@ export const router: Routes = [
           {
             path: 'update',
             component: WorkOrderModifyComponent
+          },
+          {
+            path: 'print',
+            component: WorkOrderPrintComponent
           }
         ]
       },

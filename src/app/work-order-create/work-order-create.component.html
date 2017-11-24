@@ -2,15 +2,15 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-user prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive>
+      <i class="fa fa-car prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.model" mdbActive>
       <label>Modelo </label>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-id-card-o prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive>
+      <i class="fa fa-asterisk prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.plate" mdbActive>
       <label>Patente </label>
     </div>
   </div>
@@ -18,15 +18,20 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <select class="form-control">
-        <option>Combustible</option>
+      <select class="form-control" [(ngModel)]="order.fuel">
+        <option value="-" selected>Combustible</option>
+        <option value="reserva"> Res </option>
+        <option value="1/4"> 1/4 </option>
+        <option value="1/2"> 1/2 </option>
+        <option value="3/4"> 3/4 </option>
+        <option value="full"> Full </option>
       </select>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <select class="form-control">
-        <option>Cliente</option>
+      <select class="form-control" [(ngModel)]="order.client">
+        <option *ngFor="let client of client$ | async">{{ client.name }}</option>
       </select>
     </div>
   </div>
@@ -34,15 +39,15 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-phone prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive>
+      <i class="fa fa-asterisk prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.chassis" mdbActive>
       <label>VIN</label>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-envelope prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive>
+      <i class="fa fa-asterisk prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.kilometers" mdbActive>
       <label>Kilometros</label>
     </div>
   </div>
@@ -50,15 +55,15 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-phone prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive>
+      <i class="fa fa-asterisk prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.aux" mdbActive>
       <label>Auxilio</label>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-envelope prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive>
+      <i class="fa fa-asterisk prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.stereo" mdbActive>
       <label>Estereo</label>
     </div>
   </div>
@@ -66,13 +71,13 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <textarea mdbActive type="text" id="form76" class="md-textarea"></textarea>
+      <textarea mdbActive type="text" id="form76" class="md-textarea" [(ngModel)]="order.request" ></textarea>
       <label for="form76">Solicitud de trabajo</label>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <textarea mdbActive type="text" id="form76" class="md-textarea"></textarea>
+      <textarea mdbActive type="text" id="form76" class="md-textarea" [(ngModel)]="order.response" ></textarea>
       <label for="form76">Descripcion de trabajo</label>
     </div>
   </div>
@@ -80,15 +85,15 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-phone prefix grey-text"></i>
-      <input type="date" class="form-control" mdbActive>
+      <i class="fa fa-calendar prefix grey-text"></i>
+      <input type="date" class="form-control" [(ngModel)]="order.date" mdbActive>
       <label>Fecha Ingreso</label>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <i class="fa fa-envelope prefix grey-text"></i>
-      <input type="text" class="form-control" mdbActive disabled>
+      <i class="fa fa-calendar prefix grey-text"></i>
+      <input type="text" class="form-control" [(ngModel)]="order.outDate" mdbActive disabled>
       <label>Fecha Salida</label>
     </div>
   </div>
@@ -96,19 +101,20 @@
 <div class="row">
   <div class="col">
     <div class="md-form">
-      <select class="form-control">
-        <option>Recibido por</option>
+      <select class="form-control" [(ngModel)]="order.employee">
+        <option *ngFor="let employee of employee$ | async">{{ employee.name }}</option>
       </select>
     </div>
   </div>
   <div class="col">
     <div class="md-form">
-      <select class="form-control" disabled>
-        <option>Estado</option>
-      </select>
+      <input type="text" class="form-control" [(ngModel)]="order.state" mdbActive disabled>
+      <label>Estado</label>
     </div>
   </div>
 </div>
 <div class="text-center">
-  <button class="btn btn-unique waves-light btn-block" mdbRippleRadius>Guardar <i class="fa fa-floppy-o ml-1"></i></button>
+  <button class="btn btn-unique waves-light btn-block" (click)="create(order)" mdbRippleRadius>Guardar
+    <i class="fa fa-floppy-o ml-1"></i>
+  </button>
 </div>

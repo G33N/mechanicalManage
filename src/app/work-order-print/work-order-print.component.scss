@@ -1,0 +1,43 @@
+body {
+  background: rgb(105, 105, 105) !important;
+}
+
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  &[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+    &[layout="portrait"] {
+      width: 29.7cm;
+      height: 21cm;
+    }
+  }
+  &[size="A3"] {
+    width: 29.7cm;
+    height: 42cm;
+    &[layout="portrait"] {
+      width: 42cm;
+      height: 29.7cm;
+    }
+  }
+  &[size="A5"] {
+    width: 14.8cm;
+    height: 21cm;
+    &[layout="portrait"] {
+      width: 21cm;
+      height: 14.8cm;
+    }
+  }
+}
+
+@media print {
+  body,
+  page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}

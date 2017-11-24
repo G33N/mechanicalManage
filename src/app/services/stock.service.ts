@@ -18,6 +18,7 @@ export class StockService {
     private auth: AuthService
   ) {
     this.currentUser = this.auth.currentUserId;
+    console.log(this.auth.currentUserId);
   }
 
   create(stock: Stock) {

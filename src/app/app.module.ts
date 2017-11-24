@@ -12,6 +12,7 @@ import { StockService } from './services/stock.service';
 import { CategoryService } from './services/category.service';
 import { EmployeeService } from './services/employee.service';
 import { ClientService } from './services/client.service';
+import { WorkOrderService } from './services/work-order.service';
 // FIREBASE
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -41,6 +42,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeModifyComponent } from './employee-modify/employee-modify.component';
+import { WorkOrderPrintComponent } from './work-order-print/work-order-print.component';
 // Must export the config
 export const firebaseConfig = {
   apiKey: 'AIzaSyDpvTQlzA5G5zhXjFuZvh2JsvMLbDwIWQM',
@@ -76,6 +78,7 @@ export const firebaseConfig = {
     EmployeeCreateComponent,
     EmployeeListComponent,
     EmployeeModifyComponent,
+    WorkOrderPrintComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,7 +98,8 @@ export const firebaseConfig = {
     StockService,
     CategoryService,
     EmployeeService,
-    ClientService
+    ClientService,
+    WorkOrderService
   ],
   bootstrap: [AppComponent]
 })

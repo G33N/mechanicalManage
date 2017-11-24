@@ -24,6 +24,8 @@
       "./styles.scss"
     ],
     "scripts": [
+      "../node_modules/jspdf/dist/jspdf.min.js",
+      "../node_modules/html2canvas/dist/html2canvas.min.js",
       "../node_modules/chart.js/dist/Chart.js",
       "../node_modules/hammerjs/hammer.min.js"
     ],

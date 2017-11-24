@@ -1,3 +1,60 @@
-<p>
-  work-order-list works!
-</p>
+<h1>Ordenes de servicio </h1>
+<table class="table" id="renderthis">
+  <thead class="mdb-color darken-3">
+    <tr class="text-white">
+      <th>
+        <i class="fa fa-barcode prefix grey-text"></i>
+      </th>
+      <th>Patente</th>
+      <th>Cliente</th>
+      <th>Fecha</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of order$ | async">
+      <td></td>
+      <td>{{ order.plate }}</td>
+      <td>{{ order.client }}</td>
+      <td>{{ order.date }}</td>
+      <td>
+        <button class="btn btn-sm btn-success" (click)="update(order)">
+          <i class="fa fa-pencil ml-1"></i>
+        </button>
+        <button class="btn btn-sm btn-info" (click)="print(order)">
+          <i class="fa fa-print ml-1"></i>
+        </button>
+        <button class="btn btn-sm btn-warning" (click)="basicModal.show()" mdbRippleRadius>
+          <i class="fa fa-check ml-1"></i>
+        </button>
+       
+        <div mdbModal #basicModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+          aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Cerrar orden </h4>
+              </div>
+              <div class="modal-body">
+                <div class="md-form">
+                  <textarea mdbActive type="text" id="form76" class="md-textarea" [(ngModel)]="order.request"></textarea>
+                  <label for="form76">Descripcion de trabajo</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-light" aria-label="Close" (click)="basicModal.hide()" mdbRippleRadius>Close</button>
+                <button type="button" class="btn btn-primary relative waves-light" mdbRippleRadius>Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-sm btn-danger" (click)="delete(order)">
+          <i class="fa fa-trash ml-1"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

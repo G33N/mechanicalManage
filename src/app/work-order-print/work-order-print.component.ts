@@ -7,13 +7,15 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { Order } from '../models/order';
 // SERVICES
 import { WorkOrderService } from './../services/work-order.service';
+// JSPDF
+import * as jsPDF from 'jspdf';
 
 @Component({
-  selector: 'app-work-order-modify',
-  templateUrl: './work-order-modify.component.html',
-  styleUrls: ['./work-order-modify.component.scss']
+  selector: 'app-work-order-print',
+  templateUrl: './work-order-print.component.html',
+  styleUrls: ['./work-order-print.component.scss']
 })
-export class WorkOrderModifyComponent implements OnInit {
+export class WorkOrderPrintComponent implements OnInit {
   order = {} as Order;
   order$: FirebaseListObservable<Order>;
   orderKey: string;
@@ -29,9 +31,12 @@ export class WorkOrderModifyComponent implements OnInit {
   ngOnInit() {
   }
 
-  update(order) {
-    this.workOrderService.update(order);
-    this.router.navigate([`/content/order/read`]);
+  print(order) {
+      const render = document.getElementById('renderthis');
+      const pdf = new jsPDF();
+      pdf.addHTML(render, {}, function () {
+        pdf.save('test.pdf');
+      });
   }
   read(key) {
     this.order$ = this.workOrderService.readByKey(key);
