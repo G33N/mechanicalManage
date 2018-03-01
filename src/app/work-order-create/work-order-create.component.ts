@@ -40,7 +40,6 @@ export class WorkOrderCreateComponent implements OnInit {
   }
 
   create(order) {
-    console.log(order);
     this.workOrderService.create(order);
     this.router.navigate([`/content/work-order/read`]);
   }

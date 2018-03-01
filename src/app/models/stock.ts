@@ -1,7 +1,7 @@
 export interface Stock {
     code: string;
     name: string;
-    stock: number;
+    quantity: number;
     price: number;
     date: Date;
     category: string;

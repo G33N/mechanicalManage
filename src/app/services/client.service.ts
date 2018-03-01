@@ -12,13 +12,18 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class ClientService {
   client = {} as Client;
-  client$: FirebaseListObservable<any[]>;
+  client$: FirebaseListObservable<Client[]>;
   currentUser: any;
   constructor(
     private db: AngularFireDatabase,
     private auth: AuthService
   ) {
     this.currentUser = this.auth.currentUserId;
+  }
+
+  // Implement get params to get properties mor easy
+  get getId() {
+    return this.client.id;
   }
 
   create(client: Client) {

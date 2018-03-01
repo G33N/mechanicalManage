@@ -31,7 +31,7 @@
   <div class="col">
     <div class="md-form">
       <select class="form-control" [(ngModel)]="order.client">
-        <option *ngFor="let client of client$ | async">{{ client.name }}</option>
+        <option *ngFor="let client of client$ | async" value="{{client.$key}}">{{ client.name }}</option>
       </select>
     </div>
   </div>
@@ -102,7 +102,7 @@
   <div class="col">
     <div class="md-form">
       <select class="form-control" [(ngModel)]="order.employee">
-        <option *ngFor="let employee of employee$ | async">{{ employee.name }}</option>
+        <option *ngFor="let employee of employee$ | async" value="{{employee.$key}}">{{ employee.name }}</option>
       </select>
     </div>
   </div>

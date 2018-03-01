@@ -13,4 +13,8 @@ export interface Order {
     outDate: Date;
     employee: string;
     state: string;
+    items?: [{
+      key: string;
+      quantity: number;
+    }];
   }

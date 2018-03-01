@@ -15,7 +15,7 @@
     <tr *ngFor="let order of order$ | async">
       <td></td>
       <td>{{ order.plate }}</td>
-      <td>{{ order.client }}</td>
+      <td>{{ readClientBykey(order.client).id }}</td>
       <td>{{ order.date }}</td>
       <td>
         <button class="btn btn-sm btn-success" (click)="update(order)">
@@ -24,10 +24,10 @@
         <button class="btn btn-sm btn-info" (click)="print(order)">
           <i class="fa fa-print ml-1"></i>
         </button>
-        <button class="btn btn-sm btn-warning" (click)="basicModal.show()" mdbRippleRadius>
+        <button class="btn btn-sm btn-warning" (click)="basicModal.show(); readItem(order)" mdbRippleRadius>
           <i class="fa fa-check ml-1"></i>
         </button>
-       
+
         <div mdbModal #basicModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
           aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
           <div class="modal-dialog modal-lg" role="document">
@@ -40,13 +40,39 @@
               </div>
               <div class="modal-body">
                 <div class="md-form">
-                  <textarea mdbActive type="text" id="form76" class="md-textarea" [(ngModel)]="order.request"></textarea>
+                  <textarea mdbActive type="text" id="form76" class="md-textarea" [(ngModel)]="order.response"></textarea>
                   <label for="form76">Descripcion de trabajo</label>
                 </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="md-form">
+                      <select class="form-control" [(ngModel)]="item.key">
+                        <option *ngFor="let stock of stock$ | async" value="{{stock.$key}}">{{ stock.name }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="md-form">
+                      <i class="fa fa-asterisk prefix grey-text"></i>
+                      <input type="number" class="form-control" [(ngModel)]="item.quantity" mdbActive>
+                      <label>Cantidad </label>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-block btn-outline-primary waves-effect" (click)="createItem(order)">Agregar Item</button>
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of item$ | async">
+                    {{ readStockBykey(item.key).name }}
+                    <span class="badge badge-primary badge-pill">{{ item.quantity }}</span>
+                    <a (click)="deleteItem(order, item)">
+                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary waves-light" aria-label="Close" (click)="basicModal.hide()" mdbRippleRadius>Close</button>
-                <button type="button" class="btn btn-primary relative waves-light" mdbRippleRadius>Save changes</button>
+                <button type="button" class="btn btn-primary relative waves-light" (click)="closeOrder(order)" mdbRippleRadius>Save changes</button>
               </div>
             </div>
           </div>

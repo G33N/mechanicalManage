@@ -1,8 +1,17 @@
-body {
+body, html {
   background: rgb(105, 105, 105) !important;
 }
-
+options {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  margin-top: -100px;
+  /* Negative half of height. */
+  margin-right: 0px;
+  /* Negative half of width. */
+}
 page {
+  position: relative;
   background: white;
   display: block;
   margin: 0 auto;
@@ -11,9 +20,34 @@ page {
   &[size="A4"] {
     width: 21cm;
     height: 29.7cm;
+    padding: 1cm;
     &[layout="portrait"] {
       width: 29.7cm;
       height: 21cm;
+    }
+    .header {
+      height: 4cm;
+      .logo {
+        width: 6cm;
+      }
+    }
+    .content {
+      height: 11.7cm;
+      .request {
+        height: 11.7cm;
+        background-color: rgba(105, 105, 105, 0.103);
+      }
+      .response {
+        height: 6cm;
+        background-color: rgba(105, 105, 105, 0.103);
+      }
+      .materials {
+        height: 5.7cm;
+        background-color: rgba(105, 105, 105, 0.103);
+      }
+    }
+    .footer {
+      height: 3cm;
     }
   }
   &[size="A3"] {

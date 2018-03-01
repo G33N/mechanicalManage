@@ -1,66 +1,106 @@
-<page size="a4" id="renderthis">
+<options>
+  <button class="btn btn-primary" (click)="print(order)">
+    <i class="fa fa-print" aria-hidden="true"></i>
+    IMPRIMIR</button>
+</options>
+<page size="A4" id="renderthis">
+  <section class="header">
     <div class="row">
-        <div class="col-12 col-sm-6 col-lg-6">LOGO INFO EMPRESA</div>
-        <div class="col-6 col-lg-6">DATOS ORDEN</div>
+      <div class="col-6 col-sm-6 col-lg-6">
+        <h3>
+          <span> NOMBRE EMPRESA </span>
+        </h3>
+        <p class="bussines-card">
+          CUIT 20-37771034-8
+          <br> ADDRESS Jose Ingenieros 1440
+          <br> TELEPHONE 2996 739666
+          <br> EMAIL mceliz@enlaceit.com.ar
+        </p>
+      </div>
+      <div class="col-6  col-sm-6 col-lg-6">
+        <h3>
+          <span>ORDEN #20121711AAA11 </span>
+        </h3>
+        <p class="order-card">
+          FECHA 20/12/2017
+        </p>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="client">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <h4>Datos Cliente</h4>
+      </div>
+      <div class="col-6 col-sm-6">NOMBRE {{client.name}}</div>
+      <div class="col-6 col-sm-6">LOCALIDAD {{client.town}}</div>
     </div>
     <div class="row">
-        <div class="col-12 col-sm-12">
-            <h3>Datos Cliente</h3>
-        </div>
-        <div class="col-6 col-sm-4">NOMBRE {{order.name}}</div>
-        <div class="col-6 col-sm-4">LOCALIDAD</div>
+      <div class="col-6 col-sm-6">DNI {{client.id}}</div>
+      <div class="col-6 col-sm-6">DOMICILIO {{client.address}}</div>
     </div>
     <div class="row">
-        <div class="col-6 col-sm-4">DNI {{order.client}}</div>
-        <div class="col-6 col-sm-4">DOMICILIO </div>
+      <div class="col-6 col-sm-6">TELEFONO {{client.telephone}}</div>
+      <div class="col-6 col-sm-6">EMAIL {{client.email}}</div>
+    </div>
+  </section>
+  <hr>
+  <section class="vehiculo">
+    <div class="row">
+      <div class="col-12 col-sm-12">
+        <h4 class="bold">Datos Vehiculo</h4>
+      </div>
+      <div class="col-6 col-sm-6">PATENTE {{order.plate}}</div>
+      <div class="col-6 col-sm-6">COMBUSTIBLE {{order.fuel}}</div>
     </div>
     <div class="row">
-        <div class="col-6 col-sm-4">TELEFONO</div>
-        <div class="col-6 col-sm-4">EMAIL</div>
+      <div class="col-6 col-sm-6">ESTEREO {{order.stereo}}</div>
+      <div class="col-6 col-sm-6">AUXILIO {{order.aux}}</div>
     </div>
     <div class="row">
-        <div class="col-12 col-sm-12">
-            <h3>Datos Vehiculo</h3>
-        </div>
-        <div class="col-6 col-sm-4">PATENTE {{order.plate}}</div>
-        <div class="col-6 col-sm-4">COMBUSTIBLE {{order.fuel}}</div>
+      <div class="col-6 col-sm-6">KILOMETROS {{order.kilometers}}</div>
+      <div class="col-6 col-sm-6">MODELO {{order.model}}</div>
     </div>
+  </section>
+  <hr>
+  <section class="content">
     <div class="row">
-        <div class="col-6 col-sm-4">ESTEREO {{order.stereo}}</div>
-        <div class="col-6 col-sm-4">AUXILIO {{order.aux}}</div>
+      <div class="col-6 col-sm-6">
+        <section class="request">
+          <div class="col-12 col-sm-12">
+            <h4>SOLICITUD</h4>
+            <p>{{order.request}}</p>
+          </div>
+        </section>
+      </div>
+      <div class="col-6 col-sm-6">
+        <section class="response">
+          <div class="col-12 col-sm-12">
+            <h4>REALIZADO</h4>
+            <p>{{order.response}}</p>
+          </div>
+        </section>
+        <section class="materials">
+          <div class="col-12 col-sm-12">
+            <h4>MATERIALES</h4>
+            <ul>
+              <li *ngFor="let item of items$ | async">{{ item.key }}      {{ item.quantity }}</li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
+  </section>
+  <hr>
+  <section class="footer">
     <div class="row">
-        <div class="col-6 col-sm-4">KILOMETROS {{order.kilometers}}</div>
-        <div class="col-6 col-sm-4">MODELO {{order.model}}</div>
+      <div class="col-6 col-sm-6 col-lg-6">
+        <h4>OBSERVACIONES</h4>
+      </div>
+      <div class="col-6  col-sm-6 col-lg-6">
+        <h4>FIRMA Y ACLARACION</h4>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-6 col-sm-4">
-            <div class="col-12 col-sm-12">
-                <h3>SOLICITUD</h3>
-                <p>{{order.request}}</p>
-            </div>
-        </div>
-        <div class="col-6 col-sm-4">
-            <div class="col-12 col-sm-12">
-                <h3>REALIZADO</h3>
-                <p>{{order.response}}</p>
-            </div>
-            <div class="col-12 col-sm-12">
-                <h3>MATERIALES</h3>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6 Col-sm-4">
-            <div class="col-12 col-sm-12">
-                <h3>OBSERVACIONES</h3>
-            </div>
-        </div>
-        <div class="col-6 col-sm-4">
-            <div class="col-12 col-sm-12">
-                <h3>FIRMA Y ACLARACION</h3>
-            </div>
-        </div>
-    </div>
-
+  </section>
 </page>
