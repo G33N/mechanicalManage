@@ -1,7 +1,14 @@
 # Mechanical Manage
 ![logo nut](https://firebasestorage.googleapis.com/v0/b/mechanicalmanage.appspot.com/o/git%2FbannerMechanicalManage-01.png?alt=media&token=2b8c46f2-eb7f-4d29-ac50-44bf388dea75)
 
-Manage your workshop with style!
+
+A potential project that need more attention.
+**SafeCar** you can associate or collaborate to build something big.
+
+Like client you can, find specialist to fix or check your car and why not, get a appointment in few seconds.
+Like workshop you can manager you business with a modern system and get more clients!
+
+We care your car more easy and faster!
 
 ## Firebase schema
 
